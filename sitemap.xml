@@ -9,7 +9,49 @@
 
 <url>
   <loc>https://indoca-launcher.vercel.app/</loc>
-  <lastmod>2026-03-01T08:55:37+00:00</lastmod>
+  <lastmod>2026-03-01T17:03:34+00:00</lastmod>
   <priority>1.00</priority>
 </url>
+<url>
+  <loc>https://indoca-launcher.vercel.app/New%20Web%20Indoca/index.html</loc>
+  <lastmod>2026-03-01T17:06:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Release_1.8.8_WASM.html</loc>
+  <lastmod>2026-03-01T17:06:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Release_1.12.2_WASM.html</loc>
+  <lastmod>2026-03-01T17:06:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Indev_20100223_WASM.html</loc>
+  <lastmod>2026-03-01T17:06:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglerforge-old.html</loc>
+  <lastmod>2026-03-01T17:06:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Tuff_Client_WASM.html</loc>
+  <lastmod>2026-03-01T17:06:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/Eaglymc_offline_u7_WASM.html</loc>
+  <lastmod>2026-03-01T17:06:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://indoca-launcher.vercel.app/New%20Web%20Indoca/browse.html</loc>
+  <lastmod>2026-03-01T17:06:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
