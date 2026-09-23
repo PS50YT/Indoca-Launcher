@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Launcher — Beta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="launcher">
+    <main class="main-panel">
+      <section class="news-card">
+        <div class="notice green">Be sure to check out our community page!</div>
+        <p class="small-text">Stay up to date with the latest news, contests, updates and other cool things.</p>
+
+        <h2>🚀 Minecraft version 26.3 is now available! <span>IMPORTANT!</span></h2>
+        <p>
+          If you encounter an error when launching version 26.3, make sure you have the latest
+          version of the launcher. Open the settings menu and check for launcher updates.
+        </p>
+
+        <h2>Minecraft 26.3</h2>
+        <div class="article">
+          <h3>World Generation</h3>
+          <p>• The Mottled Forest is a new autumn biome that appears near cold regions. New trees grow here, along with red bushes, brown mushrooms and fallen leaves.</p>
+          <p>• Abandoned Camp is a new natural structure that can appear in many forest and plains biomes.</p>
+          <p>• New details, vegetation, fallen trunks and decorative elements make exploration more varied.</p>
+
+          <h3>New Blocks</h3>
+          <p>• A complete set of decorative wood blocks has been added, including stairs, slabs, signs, doors, fences, gates and trapdoors.</p>
+          <p>• Red Bush is a decorative plant with a new appearance.</p>
+          <p>• Wool Stairs and Slabs provide additional building options.</p>
+
+          <h3>Gameplay</h3>
+          <p>• Various improvements and bug fixes have been included in this update.</p>
+        </div>
+      </section>
+
+      <div class="bottom-bar">
+        <div class="account-box">
+          <input type="text" value="Guest" disabled aria-label="Account">
+          <div class="beta-tag">BETA</div>
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" id="forceUpdate">
+          <span>Force update</span>
+        </label>
+
+        <div class="version-area">
+          <select id="versionSelect" aria-label="Minecraft version">
+            <option value="version-optifine-26-1-2.html">OptiFine 26.1.2</option>
+            <option value="version-forge-26-1-2.html">Forge 26.1.2</option>
+            <option value="version-fabric-26-1-2.html">Fabric 26.1.2</option>
+            <option value="version-release-26-1-1.html">Release 26.1.1</option>
+            <option value="version-forge-26-1-1.html">Forge 26.1.1</option>
+            <option value="version-fabric-26-1-1.html">Fabric 26.1.1</option>
+            <option value="version-release-26-1.html">Release 26.1</option>
+            <option value="version-forge-26-1.html">Forge 26.1</option>
+            <option value="version-fabric-26-1.html">Fabric 26.1</option>
+          </select>
+        </div>
+
+        <button class="play-button" id="playButton">Enter the game</button>
+
+        <div class="toolbar">
+          <button title="Launcher mods">TL<br><small>MODS</small></button>
+          <button title="Refresh" id="refreshButton">↻</button>
+          <button title="Open folder">▱</button>
+          <button title="Settings" id="settingsButton">⚙</button>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>TLAUNCHER</strong>
+        <span>LAUNCHER FOR MINECRAFT</span>
+      </div>
+
+      <nav>
+        <a class="nav-button" href="help.html" target="_blank">❔ <span>HELP</span></a>
+        <a class="nav-button" href="install-skin.html" target="_blank">★ <span>INSTALL SKIN</span></a>
+        <a class="nav-button" href="animated-capes.html" target="_blank">★ <span>ANIMATED CAPES</span></a>
+        <a class="nav-button" href="online-with-friends.html" target="_blank">♣ <span>ONLINE WITH FRIENDS</span></a>
+        <a class="nav-button orange" href="tlauncher-org.html" target="_blank">TL <span>TLAUNCHER.ORG</span></a>
+        <a class="nav-button blue" href="facebook.html" target="_blank">FB <span>FACEBOOK PAGE</span></a>
+      </nav>
+
+      <a class="promo-link" href="premium.html" target="_blank">
+        <div class="promo premium">
+          <div class="promo-title">TLAUNCHER<br><b>PREMIUM</b></div>
+          <div class="pixel-cube">⛏️</div>
+        </div>
+      </a>
+
+      <a class="promo-link" href="discord.html" target="_blank">
+        <div class="promo discord">
+          <div class="discord-icon">●</div>
+          <strong>Discord</strong>
+          <span>COME JOIN US!</span>
+        </div>
+      </a>
+      
+    </aside>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
