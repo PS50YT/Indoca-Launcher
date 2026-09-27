@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indoca Launcher Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <button class="icon-btn" aria-label="Back"><a href='$' style="text-decoration: none; color: white;">‹</a></button>
+      <div class="title">Mod-packs</div>
+      <button class="create-btn" id="createBtn">＋ <span>Create</span></button>
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Search">
+        <span>⌕</span>
+      </div>
+      <button class="sort-btn" id="sortBtn">Sort</button>
+      <select id="sortSelect" class="sort-select">
+        <option value="top">Top</option>
+        <option value="name">Name</option>
+        <option value="new">Newest</option>
+      </select>
+    </header>
+
+    <nav class="categorybar">
+      <div class="tool-icon">⚒</div>
+      <button class="tab active" data-type="modpacks">Mod-packs</button>
+      <button class="tab" data-type="mods">Mods</button>
+      <button class="tab" data-type="resourcepacks">Resource-packs</button>
+      <button class="tab" data-type="shaderpacks">Shaderpacks</button>
+      <button class="tab" data-type="maps">Maps</button>
+      <label class="category-label">Categories:
+        <select id="categorySelect">
+          <option value="all">All</option>
+          <option value="adventure">Adventure</option>
+          <option value="optimization">Optimization</option>
+          <option value="magic">Magic</option>
+          <option value="technology">Technology</option>
+          <option value="horror">Horror</option>
+        </select>
+      </label>
+    </nav>
+
+    <main id="content"></main>
+
+    <footer class="bottom-bar">
+      <input class="server-field" value="(no account)" aria-label="Server">
+      <select class="release-field">
+        <option>▣ Select Any Mod-pack</option>
+      </select>
+      <button class="play-btn" id="playBtn">Enter the game</button>
+      <div class="footer-actions">
+        <label><input type="checkbox" id="accounts"> Accounts</label>
+        <label><input type="checkbox" id="forceUpdate"> Force update</label>
+      </div>
+      <div class="footer-icons">
+        <button title="Refresh" id="refreshBtn">⟳</button>
+        <button title="Library">▱</button>
+        <button title="Settings">⚙</button>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

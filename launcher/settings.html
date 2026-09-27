@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sttings - Indoca Launcher</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;width:100%;height:100%;font-family:Arial,Helvetica,sans-serif}
+  body{
+    overflow:hidden;
+    background:
+      linear-gradient(135deg,rgba(12,24,30,.45),rgba(0,0,0,.45)),
+      linear-gradient(25deg,#253e45 0 15%,#101d25 15% 32%,#31555b 32% 48%,#17262c 48% 65%,#203d43 65% 80%,#101b20 80%);
+    color:#222;
+  }
+  /* Decorative Minecraft-like background */
+  .scene{position:fixed;inset:0;overflow:hidden;z-index:-1}
+  .pixel{position:absolute;filter:drop-shadow(0 4px 3px rgba(0,0,0,.25))}
+  .p1{left:0;top:0;width:220px;height:180px;background:#f5a31a;clip-path:polygon(0 0,100% 0,72% 28%,100% 58%,65% 65%,58% 100%,0 78%)}
+  .p2{right:0;top:0;width:300px;height:240px;background:#12313d;clip-path:polygon(40% 0,100% 0,100% 100%,0 100%,18% 60%,3% 36%)}
+  .p3{left:45px;bottom:0;width:250px;height:230px;background:#17282d;clip-path:polygon(0 25%,35% 0,100% 22%,83% 100%,0 100%)}
+  .p4{right:120px;bottom:0;width:390px;height:230px;background:#1d3339;clip-path:polygon(20% 0,100% 20%,100% 100%,0 100%,10% 43%)}
+  .diamond{
+    position:absolute;left:58px;top:45px;width:96px;height:116px;
+    background:linear-gradient(135deg,#b8ffff,#4fc9d1 45%,#167b88);
+    clip-path:polygon(20% 0,80% 0,100% 25%,86% 88%,50% 100%,14% 88%,0 25%);
+    box-shadow:8px 8px 0 #16515c;
+    transform:rotate(-5deg);
+  }
+  .diamond:after{content:"";position:absolute;inset:12px 16px 26px;background:#8ce9ed;clip-path:polygon(15% 0,100% 0,70% 100%,0 80%)}
+  .sword{position:absolute;left:178px;top:84px;width:100px;height:18px;background:#e9e9d0;transform:rotate(55deg);box-shadow:0 0 0 4px #6d7777}
+  .sword:after{content:"";position:absolute;left:-20px;top:-8px;width:30px;height:34px;background:#d7b45c}
+
+  .app{
+    width:470px;
+    height:400px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-54%);
+    background:#f4f4f4;
+    box-shadow:0 7px 25px rgba(0,0,0,.45);
+  }
+  .titlebar{
+    height:29px;
+    background:#39a9e1;
+    color:white;
+    display:flex;
+    align-items:center;
+    position:relative;
+    font-size:14px;
+  }
+  .back{width:45px;font-size:26px;text-align:center;line-height:29px;cursor:pointer}
+  .title{position:absolute;left:0;right:0;text-align:center;font-weight:bold}
+  .tabs{height:29px;display:flex;background:#e8e8e8;border-bottom:1px solid #ccc}
+  .tab{
+    flex:1;text-align:center;padding-top:6px;color:#2995ce;font-weight:bold;font-size:12px;cursor:pointer
+  }
+  .tab.active{background:white;color:#2d9bd2}
+
+  .content{padding:15px 13px 8px;height:300px;background:#fafafa}
+  .row{display:flex;align-items:center;margin-bottom:9px;font-size:11px}
+  .label{width:122px;font-weight:bold}
+  input[type=text], input[type=number]{
+    height:19px;border:1px solid #c8c8c8;background:white;padding:2px 5px;font-size:10px;
+  }
+  .wide{width:246px}
+  .small{width:52px;text-align:center}
+  .x{margin:0 6px}
+  button{
+    border:0;background:#cfcfcf;color:#333;height:20px;font-size:10px;cursor:pointer;padding:0 10px
+  }
+  button:hover{filter:brightness(.95)}
+  .browse{margin-left:8px;width:65px}
+  .checks{margin-left:122px;margin-top:-3px;margin-bottom:10px}
+  .check{display:block;margin:7px 0;font-size:11px}
+  .check input{vertical-align:middle;margin:0 5px 0 0}
+  .arg{margin-left:122px;width:318px;margin-bottom:8px}
+  .java{margin-top:13px}
+  .memory{
+    margin-left:122px;
+    width:246px;
+    position:relative;
+    height:43px;
+  }
+  .slider{width:246px;accent-color:#31a8df}
+  .ticks{display:flex;justify-content:space-between;font-size:9px;color:#666;margin-top:-3px}
+  .memnum{position:absolute;left:260px;top:3px;width:43px;height:20px}
+  .mb{position:absolute;left:309px;top:7px;font-size:10px}
+  .hint{
+    position:absolute;left:122px;top:264px;background:#777;color:white;border-radius:4px;
+    height:22px;width:239px;text-align:center;padding-top:5px;font-size:10px
+  }
+  .hint .close{float:right;margin-right:6px;cursor:pointer}
+  .bottom{
+    position:absolute;bottom:0;left:0;right:0;height:71px;background:#78b84b;
+    display:flex;align-items:flex-end;padding:0 12px 11px;gap:5px;
+  }
+  .bottom-left{width:230px}
+  .select{
+    height:20px;background:#fff;display:flex;align-items:center;border-radius:2px;font-size:11px;
+    padding:0 6px;margin-bottom:5px;position:relative
+  }
+  .select span:last-child{margin-left:auto}
+  .account{font-size:11px;color:white}
+  .launch{
+    width:181px;height:47px;background:#f1b535;color:white;border:0;font-size:15px;font-weight:bold;cursor:pointer
+  }
+  .launch:hover{background:#e6a72d}
+  .iconbtn{
+    width:38px;height:47px;background:transparent;color:white;font-size:23px;border:0;cursor:pointer
+  }
+  .folder{font-size:24px}
+  .gear{font-size:24px}
+  .toast{
+    position:fixed;right:20px;top:20px;background:rgba(0,0,0,.8);color:#fff;padding:10px 14px;
+    font-size:12px;border-radius:4px;display:none
+  }
+  @media(max-width:600px){
+    .app{transform:translate(-50%,-50%) scale(.82)}
+  }
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="pixel p1"></div><div class="pixel p2"></div>
+  <div class="pixel p3"></div><div class="pixel p4"></div>
+  <div class="diamond"></div><div class="sword"></div>
+</div>
+
+<div class="app">
+  <div class="titlebar">
+    <div class="title">Setting</div>
+  </div>
+
+  <div class="content">
+    <div class="row">
+      <div class="label">Directory:</div>
+      <input id="directory" class="wide" type="text" value="Web Cookies">
+      <button class="browse" onclick="showToast('Your browser is not allowing')">Browse...</button>
+    </div>
+
+    <div class="row">
+      <div class="label">Resolution:</div>
+      <input id="width" class="small" type="number" value="925">
+      <span class="x">X</span>
+      <input id="height" class="small" type="number" value="530">
+      <label style="margin-left:12px;font-size:11px"><input type="checkbox" id="fullscreen"> Fullscreen (Not Working, Beta)</label>
+    </div>
+
+    <div class="row" style="margin-bottom:4px"><div class="label">Version list:</div></div>
+    <div class="checks">
+      <label class="check"><input type="checkbox" checked> Show all</label>
+      <label class="check"><input type="checkbox"> Show unsupported</label>
+    </div>
+
+    <div class="row" style="margin-bottom:4px"><div class="label">Vsync:</div></div>
+    <div class="checks">
+      <label class="check"><input type="checkbox" checked> (Enabled by default)</label>
+    </div> 
+
+    <div class="row" style="margin-bottom:4px"><div class="label">Accounts (not working, Beta):</div></div>
+    <div class="checks">
+       <label class="check"><input type="checkbox" checked> No account</label>
+      <label class="check"><input type="checkbox"> Microsoft</label>
+      <label class="check"><input type="checkbox"> Ely.by</label>
+    </div> 
+
+    <div id="hint" class="hint">Change if you know what you do <span class="close" onclick="document.getElementById('hint').style.display='none'">×</span></div>
+  </div>
+
+  <div class="bottom">
+    <div class="bottom-left">
+      <div class="select" onclick="showToast('Account selector')">
+        <span>▣</span>&nbsp; Accounts <span>▼</span>
+      </div>
+      <div class="account"><input type="checkbox" checked> No Account</div>
+    </div>
+    <div style="width:180px">
+      <div class="select" onclick="showToast('Version selector')"><span>▣</span>&nbsp; Select any version <span>▼</span></div>
+      <label style="font-size:11px;color:white"><input type="checkbox"> Force update</label>
+    </div>
+    <button class="launch" onclick="launchGame()">Enter the game</button>
+    <button class="iconbtn" onclick="showToast('Refresh')">⟳</button>
+    <button class="iconbtn folder" onclick="showToast('Console')">▱</button>
+    <button class="iconbtn gear" onclick="showToast('Already Opened')">⚙</button>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+  function showToast(message){
+    const t=document.getElementById('toast');
+    t.textContent=message;
+    t.style.display='block';
+    clearTimeout(window.toastTimer);
+    window.toastTimer=setTimeout(()=>t.style.display='none',1500);
+  }
+  function updateMemory(v){
+    document.getElementById('memnum').value=v;
+  }
+  function syncMemory(v){
+    v=Math.max(512,Math.min(3072,Number(v)||512));
+    v=Math.round(v/512)*512;
+    document.getElementById('memnum').value=v;
+    document.getElementById('memory').value=v;
+  }
+  function switchTab(el,name){
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    el.classList.add('active');
+    showToast(name);
+  }
+  function launchGame(){
+    const w=document.getElementById('width').value;
+    const h=document.getElementById('height').value;
+    showToast('Go back to Launcher');
+  }
+</script>
+</body>
+</html>
