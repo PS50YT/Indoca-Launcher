@@ -131,7 +131,7 @@
 
 <div class="app">
   <div class="titlebar">
-    <div class="title">Setting</div>
+    <div class="title">Setting <span style='color: red;'>[BETA]</span></div>
   </div>
 
   <div class="content">
@@ -146,7 +146,7 @@
       <input id="width" class="small" type="number" value="925">
       <span class="x">X</span>
       <input id="height" class="small" type="number" value="530">
-      <label style="margin-left:12px;font-size:11px"><input type="checkbox" id="fullscreen"> Fullscreen (Not Working, Beta)</label>
+      <label style="margin-left:12px;font-size:11px"><input type="checkbox" id="fullscreen"> Fullscreen</label>
     </div>
 
     <div class="row" style="margin-bottom:4px"><div class="label">Version list:</div></div>
@@ -164,27 +164,26 @@
     <div class="checks">
        <label class="check"><input type="checkbox" checked> No account</label>
       <label class="check"><input type="checkbox"> Microsoft</label>
-      <label class="check"><input type="checkbox"> Ely.by</label>
     </div> 
 
-    <div id="hint" class="hint">Change if you know what you do <span class="close" onclick="document.getElementById('hint').style.display='none'">×</span></div>
+    <div id="hint" class="hint">It may have some problems in some devices or web browsers. IMPORTANT : THE SETTING WAS UNDER BETA <span class="close" onclick="document.getElementById('hint').style.display='none'">×</span></div>
   </div>
 
   <div class="bottom">
     <div class="bottom-left">
-      <div class="select" onclick="showToast('Account selector')">
+    <!--  <div class="select" onclick="showToast('Account selector')">
         <span>▣</span>&nbsp; Accounts <span>▼</span>
-      </div>
+      </div>-->
       <div class="account"><input type="checkbox" checked> No Account</div>
     </div>
-    <div style="width:180px">
+   <!-- <div style="width:180px">
       <div class="select" onclick="showToast('Version selector')"><span>▣</span>&nbsp; Select any version <span>▼</span></div>
       <label style="font-size:11px;color:white"><input type="checkbox"> Force update</label>
-    </div>
-    <button class="launch" onclick="launchGame()">Enter the game</button>
-    <button class="iconbtn" onclick="showToast('Refresh')">⟳</button>
+    </div>-->
+    <button class="launch" onclick="launchGame()">Save Sttings</button>
+  <!--  <button class="iconbtn" onclick="showToast('Refresh')">⟳</button>
     <button class="iconbtn folder" onclick="showToast('Console')">▱</button>
-    <button class="iconbtn gear" onclick="showToast('Already Opened')">⚙</button>
+    <button class="iconbtn gear" onclick="showToast('Already Opened')">⚙</button>-->
   </div>
 </div>
 
@@ -215,7 +214,7 @@
   function launchGame(){
     const w=document.getElementById('width').value;
     const h=document.getElementById('height').value;
-    showToast('Go back to Launcher');
+    showToast('⚠Failed, It may have problems');
   }
 </script>
 </body>
