@@ -1,116 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indoca Launcher</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INDOCA LAUNCHER - BAREBONES THEME LAUNCHER</title><style>
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Arial;background:#080b0e;color:#eee}button,select{font:inherit}.app{height:100vh;display:flex;flex-direction:column;background:#080b0e}header{height:58px;display:flex;align-items:center;padding:0 18px;background:#080b0d;border-bottom:1px solid #15191c;gap:7px}.brand{min-width:390px;font-size:13px;display:flex;gap:10px;align-items:center}.brand:first-letter{font-size:28px}nav{margin-left:auto;height:100%;display:flex}nav button{background:#090d10;color:#555;border:0;padding:0 20px;position:relative}nav .active{color:#eee;background:#101418}nav .active:after{content:'';position:absolute;height:3px;left:14px;right:14px;bottom:0;background:#e54c57}.account{height:46px;background:#151a1f;color:#ddd;border:0;display:flex;gap:8px;align-items:center;padding:5px 10px;font-size:9px;text-align:left}.account>b{font-size:23px;background:#aa8b4b;color:#222;padding:4px 9px}.account strong{font-size:12px}.account+button,header>button:last-child{width:35px;height:40px;background:#0c1013;color:#ccc;border:0}main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(550px,1fr) 280px;gap:14px;padding:14px 20px}.left{min-width:0}.hero{background:#0e1215;border:1px solid #171c20}.scene{height:285px;position:relative;overflow:hidden;background:#222}.scene-image{width:100%;height:100%;display:block;object-fit:cover}.scene-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#0002,#00000008 50%,#0004);pointer-events:none}.play{height:54px;padding:8px 48px;display:flex;align-items:center;gap:20px;background:#0d1013}.play select{height:36px;width:230px}.play button{height:38px;width:120px;background:#f3bd38;border:0;color:#fff;font-weight:bold;font-size:11px}.news{margin-top:10px;background:#0c1013;border:1px solid #151a1e;padding:11px 14px}.news h3{font-size:10px;margin:0 0 10px}.newsgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.news article{height:140px;padding:0 14px 14px;background:radial-gradient(circle at 70% 20%,#273a64,#10162a 55%,#090d15);position:relative;overflow:hidden;cursor:pointer}.news article:nth-child(2){background:radial-gradient(circle at 60% 60%,#45275f,#11142c 60%,#090d15)}.news article img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.48}.news article b,.news article small{position:relative;z-index:1;display:block}.news b{font-size:21px;font-style:italic;padding-top:12px}.news small{font-size:8px;color:#bbb}.servers{background:#0d1114;border:1px solid #171c20;padding:18px 12px}.heading{display:flex;justify-content:space-between;font-size:10px;margin:0 4px 12px}.heading button{background:none;color:#ddd;border:0;font-size:9px}.server{height:43px;display:flex;align-items:center;gap:10px;padding:0 7px;border-bottom:1px solid #171d21;font-size:11px}.server:hover{background:#151b20}.server strong{margin-left:auto;color:#69c65b;font-size:9px}.server i{font-style:normal;color:#b16de0}.ad{height:315px;margin-top:10px;position:relative;overflow:hidden;background:radial-gradient(circle at 65% 30%,#a86bd0,#3d2759 30%,#161a2d 65%,#090d12);border:1px solid #171c20}.orb{position:absolute;width:120px;height:160px;border-radius:55%;background:radial-gradient(circle at 35% 30%,#f4d8ff,#a14dd2 35%,#43225f 75%);right:45px;top:10px;transform:rotate(23deg);box-shadow:0 0 45px #c25df0aa}.adtext{position:absolute;left:20px;bottom:75px;font-size:24px;font-weight:900;transform:rotate(-7deg)}.adfoot{position:absolute;bottom:0;left:0;right:0;height:68px;background:#eee;color:#222;display:flex;align-items:center;justify-content:space-between;padding:10px 12px}.adfoot button{background:#4c5258;color:white;border:0;padding:12px 20px;font-weight:bold}#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:#20252a;padding:12px 20px;border-radius:4px;opacity:0;transition:.2s;font-size:12px}#toast.show{opacity:1;transform:translateX(-50%)}@media(max-width:850px){.brand{min-width:auto}.brand b{display:none}main{grid-template-columns:1fr}.right{display:none}aside{display:none}}@media(max-width:600px){.brand{min-width:0}header{padding:0 8px}.account span{display:none}.play{padding:8px 12px}.play select{width:55%}.newsgrid{grid-template-columns:1fr}main{padding:8px}}
+</style></head>
 <body>
-  <div class="launcher">
-    <main class="main-panel">
-      <section class="news-card">
-        <div class="notice green">Be sure to check out our community page!</div>
-        <p class="small-text">Stay up to date with the latest news, contests, updates and other cool things.</p>
+<div class="app">
+<header><div class="brand">✦ <b>INDOCA LAUNCHER <span style="color: #a14dd2;">BAREBONES</span></b></div>
+<nav><button class="active">▣ Play</button><button id="mods"><a href="https://indoca-launcher.vercel.app/launcher/mods/index.html" style="color: white; opacity: 48; text-decoration: none;">▦ Mods</a></button></nav>
+<button id="account" class="account"><b  style="background-image: url(https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcS9jr0n8i7LY1tL3U7AiafZZSuBd4YJlEFf3rMR2t4PfMyGnYHzqHg6GDK9xHT9vJ&format=png); background-repeat: no-repeat; background-size: cover;"><span style="opacity: 0;">11</span></b><span>Not signed in<br><strong>Guest User</strong></span></button>
+<button id="news">▱</button><button id="settings"><a href="https://indoca-launcher.vercel.app/launcher/settings.html" style="color: white; text-decoration: none;">⚙</a></button></header>
 
-        <h2>🚀 Minecraft version 26.2 is available! <span>IMPORTANT!</span></h2>
-        <p>
-          You can now play Minecraft on your Web Browser!
-        </p>
+<main><section class="left">
+<div class="hero"><div class="scene"><img id="sceneImage" class="scene-image" src="https://i.ytimg.com/vi/VOL1PHXM-Kg/maxresdefault.jpg" alt="Minecraft launcher preview"><div class="scene-overlay"></div></div>
+<div class="play"><!-- Change each option value to the website you want that version to open. --><select id="version">
+    <option value="https://indoca-launcher-extras.netlify.app/eaglercraft-26.2-0.6.html">Vanilla 26.2</option>
+    <option value="https://eaglerforge.github.io/EaglerForge-builds/web/v1.3.2/">EaglerForge-Old</option>
+    <option value="https://indoca-launcher-extras.netlify.app/eaglerforge.html">EaglerForge-Injector</option>
+    <option value="https://indoca-launcher-extras.netlify.app/">LegacyFabric 1.13</option>
+    <option value="https://mcraft.fun/">Prismarine Web Client</option>
+    <option value="https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Indev_20100223_WASM.html">Indev 20100223</option>
+    <option value="https://yee.pages.dev/games/mcpe/">Bedrock a0.1.0</option>
+    <option value="https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Release_1.12.2_WASM.html">Vanilla 1.12.2</option>
+    <option value="https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Release_1.8.8_WASM.html">Vanilla 1.8</option>
+</select><button id="play">Enter the game</button></div></div>
 
-        <h2>Minecraft 26.2</h2>
-        <div class="article">
-          <h3>World Generation</h3>
-          <p>• A cave has been added called Sulphur Cave.</p>
-          <h3>New Mob</h3>
-          <p>• A new mob found in Sulfur Caves. It can absorb blocks, changing its physical properties based on the block absorbed. When killed, it splits into smaller Sulfur Cubes.</p>
+<section class="news"><h3>LATEST NEWS FROM INDOCA LAUNCHER</h3><div class="newsgrid">
+<article data-url="#"><img src="https://placehold.co/800x360/17203a/ffffff?text=BAREBONES+EDITION+THEME%21" alt="Earn free points"><b>BAREBONES!</b><small>A new edition has been released!</small></article>
+<article data-url="#"><img src="https://placehold.co/800x360/30204b/ffffff?text=BAREBONES+EDITION+THEME%21" alt="Free Discord cloak"><b>CLASSIC!</b><small>A new edition has been released!</small></article>
+</div></section></section>
 
-          <h3>New Blocks</h3>
-          <p>• Sulfur Block</p>
-          <p>• Cinnabar Block</p>
-          <p>• Sulfur Spike</p>
-          <p>• Potent Sulfur</p>
-          <p>• Other related building blocks</p>
-          <p>• "Bounce" — new Music Disc</p>
-          <p>• 5 additional music tracks by fingerspit</p>
-
-          <h3>Gameplay</h3>
-          <p>• Various improvements and bug fixes have been included in this update.</p>
-          <p>• Various improvements and bug fixes have been included in this update.</p>
-          <p>• Various improvements and bug fixes have been included in this update.</p>
-        </div>
-      </section>
-
-      <div class="bottom-bar">
-        <div class="account-box">
-          <input type="text" value="(no account)" disabled aria-label="Account">
-          <div class="beta-tag">ACCOUNT</div>
-        </div>
-
-        <label class="checkbox-row">
-          <input type="checkbox" id="forceUpdate">
-          <span>Force update</span>
-        </label>
-
-        <div class="version-area">
-          <select id="versionSelect" aria-label="Minecraft version">
-            <option value="https://indoca-launcher-extras.netlify.app/eaglercraft-26.2-0.6.html">Vanilla 26.2</option>
-            <option value="https://eaglerforge.github.io/EaglerForge-builds/web/v1.3.2/">Eaglerforge-Old</option>
-            <option value="https://indoca-launcher-extras.netlify.app/eaglerforge.html">Eaglerforge-Injector</option>
-            <option value="https://indoca-launcher-extras.netlify.app/">LegacyFabric 1.13</option>
-            <option value="https://mcraft.fun/">Prismarine Web Client</option>
-            <option value="https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Indev_20100223_WASM.html">Indev 20100223</option>
-            <option value="https://yee.pages.dev/games/mcpe/">Bedrock a0.1.0</option>
-            <option value="https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Release_1.12.2_WASM.html">Vanilla 1.12.2</option>
-            <option value="https://indoca-launcher.vercel.app/New%20Web%20Indoca/assests/eaglercraft.dev_Release_1.8.8_WASM.html">Vanilla 1.8.8</option>
-          </select>
-        </div>
-
-        <button class="play-button" id="playButton">Enter the game</button>
-
-        <div class="toolbar">
-          <button title="Launcher mods">MC<br><small>MODS</small></button>
-          <button title="Refresh" id="refreshButton">↻</button>
-          <button title="console">▱</button>
-          <button title="Settings" id="settingsButton">⚙</button>
-        </div>
-      </div>
-    </main>
-
-    <aside class="sidebar">
-      <div class="brand">
-        <strong>INDOCA LAUNCHER</strong>
-        <span>LAUNCHER FOR MINECRAFT</span>
-      </div>
-
-      <nav>
-        <a class="nav-button" href="help.html" target="_blank">❔ <span>HELP</span></a>
-        <a class="nav-button" href="install-skin.html" target="_blank">★ <span>INSTALL SKIN</span></a>
-        <a class="nav-button" href="animated-capes.html" target="_blank">★ <span>MAKE MOD-PACK</span></a>
-        <a class="nav-button" href="online-with-friends.html" target="_blank">♣ <span>ONLINE WITH FRIENDS</span></a>
-        <a class="nav-button orange" href="https://indoca-launcher.vercel.app/" target="_blank">WEB <span>WEBSITE</span></a>
-        <a class="nav-button blue" href="https://github.com/PS50YT/Indoca-Launcher/issues" target="_blank">🗣 <span>COMMUNITY PAGE</span></a>
-      </nav>
-
-      <a class="promo-link" href="#" target="_blank">
-        <div class="promo premium">
-          <div class="promo-title">PLAY MC ON<br><b>BROWSER!</b></div>
-          <div class="pixel-cube">⛏️</div>
-        </div>
-      </a>
-
-      <a class="promo-link" href="#" target="_blank">
-        <div class="promo discord">
-          <div class="discord-icon"><span>●</span></div>
-          <strong>Archived</strong>
-          <span>Since 24/4/26</span>
-        </div>
-      </a>
-      
-    </aside>
-  </div>
-
-  <div class="toast" id="toast"></div>
-  <script src="script.js"></script>
-</body>
-</html>
+<aside><section class="servers"><div class="heading"><b>LAUNCHER FOR MINECRAFT</b><button id="more"> </button></div>
+<div class="server" data-url="https://pvplegacy.net/"><i><b>?</b> </i>Help</div>
+<div class="server" data-url="https://pvplegacy.net/"><i><b>+</b> </i>Make Mod-packs</div>
+<div class="server" data-url="https://pvplegacy.net/"><i>✦ </i>Website</div>
+<div class="server" data-url="https://pvplegacy.net/"><i>✣  </i>Online with friends</div>
+<div class="server" data-url="https://pvplegacy.net/"><i>🗣 </i>Community Page</div></section>
+<section class="ad"><div class="orb"></div></section></aside></main>
+<div id="toast"></div></div><script>
+const toast=document.getElementById('toast');
+function show(t){toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)}
+document.getElementById('play').onclick=()=>{const select=document.getElementById('version');const url=select.value;const name=select.options[select.selectedIndex].text;show('Opening '+name+'...');setTimeout(()=>{window.location.href=url},350)};
+document.getElementById('mods').onclick=()=>show('Mods menu opened');
+document.getElementById('account').onclick=()=>show('Guest User — sign in is unavailable');
+document.getElementById('news').onclick=()=>show('Console');
+document.getElementById('settings').onclick=()=>show('Settings');
+document.getElementById('more').onclick=()=>show('More partner servers');
+document.querySelectorAll('.server').forEach(x=>x.onclick=()=>{if(x.dataset.url)location.href=x.dataset.url;else show('Server link not configured')});
+document.querySelectorAll('.news article').forEach(x=>x.onclick=()=>location.href=x.dataset.url);
+</script></body></html>
